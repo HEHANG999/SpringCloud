@@ -1,0 +1,18 @@
+#服务器端口号
+server:
+  port: 8000
+
+#服务器名字
+spring:
+  application:
+    name: RegisterServer
+
+eureka:
+  instance:
+    hostname: 127.0.0.1 #服务器ip地址
+
+  client:
+    registerWithEureka: false #是否向服务器注册---默认true
+    fetchRegistry: false
+    serviceUrl: #服务器向外发布的地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #翻译后--http://127.0.0.1:8000/

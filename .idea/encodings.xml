@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client1s" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client1s/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client2_Feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Client2_Feign/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConfigClient1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConfigClient1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConfigClient2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConfigClient2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConfigServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConfigServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Queue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Queue/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RegisterServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RegisterServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,19 @@
+#本服务器端口
+server:
+  port: 8002
+
+#本服务器名称
+spring:
+  application:
+    name: Client2
+
+#本服务器id地址
+eureka:
+  instance:
+    hostname: 127.0.0.1
+
+#注册服务器地址
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8000/eureka/
+

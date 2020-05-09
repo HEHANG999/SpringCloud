@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ConfigServer" />
+        <module name="Queue" />
+        <module name="Client1" />
+        <module name="Client2_Feign" />
+        <module name="ConfigClient1" />
+        <module name="ConfigClient2" />
+        <module name="Client1s" />
+        <module name="RegisterServer" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Bean" target="1.5" />
+      <module name="Client1_nginx" target="1.8" />
       <module name="ConfigServer" target="1.8" />
       <module name="RegisterServer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Client1" options="-parameters" />
+      <module name="Client1_nginx" options="-parameters" />
+      <module name="Client1s" options="-parameters" />
+      <module name="Client2_Feign" options="-parameters" />
+      <module name="ConfigClient1" options="-parameters" />
+      <module name="ConfigClient2" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
+      <module name="Queue" options="-parameters" />
       <module name="RegisterServer" options="-parameters" />
       <module name="SpringCloud" options="-parameters" />
     </option>
