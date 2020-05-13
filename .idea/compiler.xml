@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ConfigServer" />
-        <module name="Queue" />
         <module name="Client1" />
+        <module name="Client1s" />
         <module name="Client2_Feign" />
         <module name="ConfigClient1" />
         <module name="ConfigClient2" />
-        <module name="Client1s" />
+        <module name="ConfigServer" />
+        <module name="Queue" />
         <module name="RegisterServer" />
       </profile>
     </annotationProcessing>
