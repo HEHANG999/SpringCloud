@@ -100,6 +100,12 @@
 
 
 
+        <!--SpringBoot的mybatis-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>
         <!-- mysql数据库驱动-->
         <dependency>
             <groupId>mysql</groupId>
@@ -157,21 +163,9 @@
 
 
 
-        <!--poi用于查询excel表中的数据-->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>4.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>4.1.2</version>
-        </dependency>
-
-
-
-        <!--实体类加上注解@Data就不用写get/set方法了————但必须要安装lombok插件-->
+        <!--实体类加上注解@Data就不用写get/set方法了,但是：
+          （1）但必须要安装lombok插件才会有get/set方法，建议手写
+          （2）这个框架自带json格式，在controller返回数据时页面可见！很好-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
