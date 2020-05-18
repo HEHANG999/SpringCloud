@@ -14,6 +14,7 @@
         <module name="ConfigServer" />
         <module name="Excel_Poi" />
         <module name="Queue" />
+        <module name="RabbitMQ" />
         <module name="RegisterServer" />
         <module name="Shiro" />
       </profile>
@@ -36,6 +37,7 @@
       <module name="ConfigServer" options="-parameters" />
       <module name="Excel_Poi" options="-parameters" />
       <module name="Queue" options="-parameters" />
+      <module name="RabbitMQ" options="-parameters" />
       <module name="RegisterServer" options="-parameters" />
       <module name="Shiro" options="-parameters" />
       <module name="SpringCloud" options="-parameters" />

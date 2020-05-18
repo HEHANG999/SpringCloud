@@ -19,6 +19,7 @@
         <module>ConfigClient2</module>
         <module>Excel_Poi</module>
         <module>Shiro</module>
+        <module>RabbitMQ</module>
 
     </modules>
 

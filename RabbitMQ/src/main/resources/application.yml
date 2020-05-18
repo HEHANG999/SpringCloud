@@ -1,0 +1,25 @@
+#服务器
+server:
+  port: 7777
+
+#服务器名字
+spring:
+  application:
+    name: rabbitMQ
+
+#MQ配置
+  rabbitmq:
+    host: 127.0.0.1 #rabbitMQ中间件所在服务器的IP
+    port: 5672
+    username: admin
+    password: admin
+    publisher-confirms: true    #开启发送确认
+    publisher-returns:  true    #开启发送失败返回
+    listener:
+      simple:
+        acknowledge-mode: manual  #开启ACK模式
+        retry:
+          max-attempts: 5         #重试次数
+          initial-interval: 5000  #重试间隔时间
+          enabled: true           #开启消费重试
+        default-requeue-rejected: false  #重试次数超过上面的次数之后是否丢弃（false不丢弃时需要写相应代码将该消息加入死信队列）
