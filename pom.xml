@@ -20,6 +20,7 @@
         <module>Excel_Poi</module>
         <module>Shiro</module>
         <module>RabbitMQ</module>
+        <module>Swagger</module>
 
     </modules>
 
