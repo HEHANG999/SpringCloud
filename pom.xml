@@ -19,8 +19,8 @@
         <module>ConfigClient2</module>
         <module>Excel_Poi</module>
         <module>Shiro</module>
-        <module>RabbitMQ</module>
         <module>Swagger</module>
+        <module>WebSocket_RabbitMQ</module>
 
     </modules>
 
@@ -132,14 +132,14 @@
             <version>2.1.4.RELEASE</version>
         </dependency>
 
-        <!--配置服务器（注意！这个坐标只能放在配置服务器里！否则不生效！）-->
+        <!--配置服务器(集中配置)（注意！这个坐标只能放在配置服务器里！否则不生效！）-->
        <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
             <version>2.1.4.RELEASE</version>
         </dependency>-->
 
-        <!--熔断-->
+        <!--熔断机制-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
@@ -167,7 +167,8 @@
 
         <!--实体类加上注解@Data就不用写get/set方法了,但是：
           （1）但必须要安装lombok插件才会有get/set方法，建议手写
-          （2）这个框架自带json格式，在controller返回数据时页面可见！很好-->
+          （2）这个框架自带json格式，在controller返回数据时页面可见！很好
+          （3）但是！装了插件,页面返回json格式自动取消了！-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

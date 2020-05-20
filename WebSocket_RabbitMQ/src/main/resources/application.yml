@@ -1,18 +1,19 @@
-#服务器
+#设置本服务器端口号
 server:
   port: 7777
 
-#服务器名字
+#设置本服务器名称
 spring:
   application:
-    name: rabbitMQ
+    name: WebSocketRabbitMQ
 
-#MQ配置
+  #MQ配置
   rabbitmq:
     host: 127.0.0.1 #rabbitMQ中间件所在服务器的IP
-    port: 5672
+    port: 5672      #网页访问http://127.0.0.1:15672
     username: admin
     password: admin
+
     publisher-confirms: true    #开启发送确认
     publisher-returns:  true    #开启发送失败返回
     listener:
@@ -23,3 +24,7 @@ spring:
           initial-interval: 5000  #重试间隔时间
           enabled: true           #开启消费重试
         default-requeue-rejected: false  #重试次数超过上面的次数之后是否丢弃（false不丢弃时需要写相应代码将该消息加入死信队列）
+
+
+
+

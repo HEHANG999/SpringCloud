@@ -1,12 +1,13 @@
 package com.project;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * 这是一个客户端
  */
-@SpringBootApplication//表示springboot
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})//表示springboot
 @EnableEurekaClient//注册客户端（微服务）
 public class ConfigClient1Main {
 
