@@ -21,7 +21,7 @@ public class sendMQ {
     String UUID = java.util.UUID.randomUUID().toString();
 
 
-
+/*=================================rabbitMQ==================================================================*/
     @RequestMapping("sendStr")
     @ResponseBody
     public String sendStr(String str){
@@ -50,6 +50,21 @@ public class sendMQ {
     public String webHtml(){
         return "Web.html";
     }
+
+
+
+
+/*=================================webSocket==================================================================*/
+
+
+    @RequestMapping("sendWeb")
+    @ResponseBody
+    public String sendWeb1(String str){
+        System.out.println(str);
+        return str;
+    }
+
+
 
 
 }

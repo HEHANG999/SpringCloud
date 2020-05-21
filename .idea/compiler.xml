@@ -27,6 +27,7 @@
       <module name="ConfigServer" target="1.8" />
       <module name="RabbitMQ" target="1.8" />
       <module name="RegisterServer" target="1.8" />
+      <module name="WebSocket" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
