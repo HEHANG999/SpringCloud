@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input id="text" type="text"/>
+    <button onclick="send()">发送消息</button> <hr/>
+    <div id="message"></div>
+
+</body>
+
+<script type="text/javascript">
+
+    var socket = null;
+
+    //判断当前浏览器是否支持WebSocket
+    if ('WebSocket' in window) {
+        alert('当前浏览器支持WebSocket')
+
+        //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
+        socket = new WebSocket("ws://127.0.0.1:7777/websocket");
+    }
+    else {
+        alert('当前浏览器 Not support websocket')
+    }
+
+
+    //连接成功（回调方法）
+    socket.onopen = function () {
+        alert("Socket 连接成功");
+    }
+
+    //连接错误（回调方法）
+    socket.onerror = function () {
+        alert('连接出错')
+        //可尝试刷新页面--循环
+        //window.location.reload();
+    };
+
+    //接收消息（回调方法）
+    socket.onmessage = function (event) {
+        alert("收到信息")
+        receive(event.data);
+    }
+
+    //连接关闭（回调方法）
+    socket.onclose = function () {
+        alert("连接关闭");
+    }
+
+    //窗口关闭，关闭websocket（否则server端会抛异常）
+    window.onbeforeunload = function () {
+        socket.close();
+    }
+
+    
+
+
+
+
+    //发送消息
+    function send() {
+        var msg = document.getElementById("text").value;
+        socket.send(msg);
+    }
+    
+    //返回消息显示到页面
+    function receive(message) {
+        document.getElementById("message").innerHTML+=message+"<br>";
+    }
+
+</script>
+
+</html>

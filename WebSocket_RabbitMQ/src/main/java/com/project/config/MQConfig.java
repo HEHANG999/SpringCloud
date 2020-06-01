@@ -1,12 +1,11 @@
 package com.project.config;
-
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
  * MQ配置类
@@ -69,5 +68,15 @@ public class MQConfig {
     public Binding fanoutExchangeToTopicQueueA(Queue topicQueue,FanoutExchange fanoutExchange){
         return BindingBuilder.bind(topicQueue).to(fanoutExchange);//没有with，不需要key值
     }*/
+
+
+
+
+    //websocket 放入到spring容器
+    @Bean
+    public ServerEndpointExporter serverEndpointExporter() {
+        return new ServerEndpointExporter();
+    }
+
 
 }

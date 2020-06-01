@@ -166,15 +166,15 @@
 
 
         <!--实体类加上注解@Data就不用写get/set方法了,但是：
-          （1）但必须要安装lombok插件才会有get/set方法，建议手写
-          （2）这个框架自带json格式，在controller返回数据时页面可见！很好
-          （3）但是！装了插件,页面返回json格式自动取消了！-->
+          （1）安装lombok插件才会有get/set方法，建议手写
+          （2）使用log.info()可在控制台打出想要的消息-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.6</version>
             <scope>provided</scope>
         </dependency>
+
 
     </dependencies>
 
