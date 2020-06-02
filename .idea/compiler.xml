@@ -14,10 +14,15 @@
         <module name="ConfigClient2" />
         <module name="ConfigServer" />
         <module name="Excel_Poi" />
+        <module name="Jdk1.8" />
+        <module name="Jwt" />
+        <module name="Jwt_client" />
+        <module name="MyBatis_Plus" />
         <module name="Queue" />
         <module name="RegisterServer" />
         <module name="Shiro" />
         <module name="Swagger" />
+        <module name="WebService" />
         <module name="WebSocket_RabbitMQ" />
       </profile>
     </annotationProcessing>
@@ -25,6 +30,7 @@
       <module name="Bean" target="1.5" />
       <module name="Client1_nginx" target="1.8" />
       <module name="ConfigServer" target="1.8" />
+      <module name="Jdk18" target="1.8" />
       <module name="RabbitMQ" target="1.8" />
       <module name="RegisterServer" target="1.8" />
       <module name="WebSocket" target="1.5" />
@@ -40,12 +46,18 @@
       <module name="ConfigClient2" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="Excel_Poi" options="-parameters" />
+      <module name="Jdk1.8" options="-parameters" />
+      <module name="Jdk18" options="-parameters" />
+      <module name="Jwt" options="-parameters" />
+      <module name="Jwt_client" options="-parameters" />
+      <module name="MyBatis_Plus" options="-parameters" />
       <module name="Queue" options="-parameters" />
       <module name="RabbitMQ" options="-parameters" />
       <module name="RegisterServer" options="-parameters" />
       <module name="Shiro" options="-parameters" />
       <module name="SpringCloud" options="-parameters" />
       <module name="Swagger" options="-parameters" />
+      <module name="WebService" options="-parameters" />
       <module name="WebSocket_RabbitMQ" options="-parameters" />
     </option>
   </component>

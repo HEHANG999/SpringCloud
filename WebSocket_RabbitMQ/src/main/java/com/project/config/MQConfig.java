@@ -23,6 +23,9 @@ public class MQConfig {
         return new RabbitTemplate(factory);
     }
 
+
+
+
     //3、创建队列
     @Bean
     public Queue pointQueue(){
@@ -34,24 +37,36 @@ public class MQConfig {
         return new Queue("topic.pointQueue.a");
     }
 
+
+
+
     //4、创建交换机
-    @Bean//点对点式
+    @Bean//直连交换机
     public DirectExchange pointDirectExchange(){
         return new DirectExchange("pointDirectExchange");
     }
 
-    @Bean//模糊匹配式
+    @Bean//通配交换机
     public TopicExchange topicExchange(){
         return new TopicExchange("topicExchangeA");
     }
 
-    /*@Bean//直接匹配式
+    /*@Bean//订阅交换机
     public FanoutExchange fanoutExchange(){
         return new FanoutExchange("fanoutExchange");
     }*/
 
+   /* @Bean//Headers交换机（基本不用，效率太低）
+    public HeadersExchange headersExchange(){
+        return new HeadersExchange("");
+    }*/
+
+
+
+
+
     //5、绑定交换机
-    @Bean//自动绑定，不用MQ页面手动绑定了,但第二次启动服务器时要把@bean去掉，避免二次绑定冲突！
+    @Bean//自动绑定，不用MQ页面手动绑定了,但要注意避免二次绑定冲突！
     public Binding pointQueueToPointDirectExchange(Queue pointQueue, DirectExchange pointDirectExchange){
         return BindingBuilder.bind(pointQueue).to(pointDirectExchange).with("pointKey");//with可以确定队列的名字，否则发送所有的队列
     }

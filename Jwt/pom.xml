@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Shiro</artifactId>
+    <artifactId>Jwt</artifactId>
 
     <!-- 继承父包，所有spring-boot下的框架都会使用这个版本 -->
     <parent>
@@ -14,6 +14,8 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+
 
     <dependencies>
 
@@ -47,19 +49,17 @@
 
 
 
-        <!--shiro-->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.theborakompanioni</groupId>
-            <artifactId>thymeleaf-extras-shiro</artifactId>
-            <version>2.0.0</version>
-        </dependency>
 
+
+
+        <!--jwt验证+加密技术-->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.10.3</version>
+        </dependency>
 
     </dependencies>
+
 
 </project>

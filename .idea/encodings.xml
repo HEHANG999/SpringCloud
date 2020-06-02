@@ -15,13 +15,17 @@
     <file url="file://$PROJECT_DIR$/ConfigServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConfigServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Excel_Poi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Jdk1.8" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Jwt_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyBatis_Plus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Queue/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RabbitMQ" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RegisterServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RegisterServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Shiro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Swagger" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebSocket_RabbitMQ" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />

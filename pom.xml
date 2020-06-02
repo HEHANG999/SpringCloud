@@ -21,6 +21,11 @@
         <module>Shiro</module>
         <module>Swagger</module>
         <module>WebSocket_RabbitMQ</module>
+        <module>Jwt</module>
+        <module>Jwt_client</module>
+        <module>MyBatis_Plus</module>
+        <module>Jdk1.8</module>
+        <module>WebService</module>
 
     </modules>
 

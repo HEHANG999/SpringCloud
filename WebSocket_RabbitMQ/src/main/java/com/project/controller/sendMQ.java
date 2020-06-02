@@ -79,7 +79,7 @@ public class sendMQ {
 
     @RequestMapping("sendTopic")
     @ResponseBody
-    public String sendTopic(String str){
+    public String sendTopic(String str){//不开启确认机制，监听就一个message参数就可以了
 
         //routingKey只要以topic开头，都可以匹配到topicExchangeA交换机
         rabbitTemplate.convertAndSend("topicExchangeA","topic.hello",str);
@@ -95,18 +95,7 @@ public class sendMQ {
 /*=================================webSocket==================================================================*/
 
 
-    @RequestMapping("sendWeb")
-    public String sendWeb(String str){
-        System.out.println(str);
 
-
-        return "ReceiveMsg.html?str="+str;
-
-
-        /*ModelAndView v = new ModelAndView("ReceiveMsg.html");
-        v.addObject("str",str);
-        return v;*/
-    }
 
 
 

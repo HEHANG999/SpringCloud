@@ -14,7 +14,7 @@ public class Client1Controller {
     @HystrixCommand(fallbackMethod = "error")//熔断指引
     public String client1Info(@PathVariable("tag") String param){
 
-        int i = 9/0;
+        //int i = 9/0;
         switch (param){
             case "1":
                 return "这个参数是数字："+param;
