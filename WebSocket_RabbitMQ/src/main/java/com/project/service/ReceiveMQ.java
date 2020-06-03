@@ -43,7 +43,27 @@ public class ReceiveMQ {
         System.out.println("收到队列发来消息："+message);
 
         //消费消息
-        //channel.basicAck(tag, false);
+        channel.basicAck(tag, false);
+    }
+
+
+    @RabbitListener(queues = "dealQueue")//监听死信队列
+    public void getDealQueueInfo(String message){
+
+        System.out.println("收到死信队列发来消息："+message);
+    }
+
+
+    @RabbitListener(queues = "dealToQueue")//监听已绑定死信的队列
+    public void getDealToQueueInfo(String message,Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag){
+
+        System.out.println("收到队列发来消息2："+message);
+
+        try {
+            channel.basicNack(tag,false,true);//手动不确认收到消息，会反复取(直到6秒后停止)
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

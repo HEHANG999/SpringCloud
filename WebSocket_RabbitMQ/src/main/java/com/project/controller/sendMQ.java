@@ -31,8 +31,8 @@ public class sendMQ {
     RabbitTemplate.ConfirmCallback confirmCallback = new RabbitTemplate.ConfirmCallback(){
         @Override
         public void confirm(CorrelationData correlationData, boolean b, String s) {
-           /* System.out.println("CorrelationData="+correlationData);
-            System.out.println("b="+b);
+           //System.out.println("CorrelationData="+correlationData);
+           /*System.out.println("b="+b);
             System.out.println("s="+s);*/
             //写业务 如果b=true代表数据已放入队列，根据correlationData（数据ID）修改本地它的数据tag=1，代表真实数据
 
@@ -66,11 +66,12 @@ public class sendMQ {
         rabbitTemplate.setConfirmCallback(confirmCallback); //绑定回调函数--确认
         rabbitTemplate.setReturnCallback(returnCallback);//绑定回调函数--回退
 
-        CorrelationData correlationData = new CorrelationData(UUID);//消息确认唯一标志，必须保证唯一性
-        //System.out.println(correlationData.getId()+"/uuid="+UUID);
+        /*CorrelationData correlationData = new CorrelationData(UUID);//消息确认唯一标志，必须保证唯一性
+        System.out.println(correlationData.getId()+"：uuid="+UUID);*/
 
         //发送
         rabbitTemplate.convertAndSend("pointDirectExchange","pointkey",str);
+        //rabbitTemplate.convertAndSend("pointDirectExchange","pointkey",str,correlationData);
 
         return "发送成功6666/"+str;
     }
@@ -79,7 +80,7 @@ public class sendMQ {
 
     @RequestMapping("sendTopic")
     @ResponseBody
-    public String sendTopic(String str){//不开启确认机制，监听就一个message参数就可以了
+    public String sendTopic(String str){//不开启确认机制，监听中就一个message参数就可以了
 
         //routingKey只要以topic开头，都可以匹配到topicExchangeA交换机
         rabbitTemplate.convertAndSend("topicExchangeA","topic.hello",str);
@@ -88,6 +89,25 @@ public class sendMQ {
     }
 
 
+
+
+    //死信队列
+    @RequestMapping("sendDeal")
+    @ResponseBody
+    public String sendDeal(String str){
+
+        rabbitTemplate.convertAndSend("dealDirectExchange","dealKey",str);
+        return "发送成功";
+    }
+
+    //绑定死信的队列
+    @RequestMapping("sendDealTo")
+    @ResponseBody
+    public String sendDealTo(String str){
+
+        rabbitTemplate.convertAndSend("dealToDirectExchange","dealToKey",str);
+        return "发送成功";
+    }
 
 
 

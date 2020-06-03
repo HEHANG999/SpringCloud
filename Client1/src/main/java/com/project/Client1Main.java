@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})//头部声名：表示这个springboot不需要数据源配置！！
 @EnableEurekaClient//注册客户端（微服务）
-@EnableCircuitBreaker//熔断机制！！------出错后的指定
+@EnableCircuitBreaker//熔断机制！！------出错后的指定（防止雪崩）
 public class Client1Main {
 
 

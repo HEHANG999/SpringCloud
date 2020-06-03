@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * MQ配置类
  */
@@ -23,7 +26,7 @@ public class MQConfig {
         return new RabbitTemplate(factory);
     }
 
-
+//=================================================================================================
 
 
     //3、创建队列
@@ -38,6 +41,53 @@ public class MQConfig {
     }
 
 
+//=================================================================================================
+
+    @Bean//死信队列
+    public Queue dealQueue(){
+        return new Queue("dealQueue");
+    }
+    @Bean//死信交换机
+    public DirectExchange dealDirectExchange(){
+        return new DirectExchange("dealDirectExchange");
+    }
+    @Bean//死信队列绑定交换机
+    public Binding dealQueueToDealDirectExchange(Queue dealQueue,DirectExchange dealDirectExchange){
+        return BindingBuilder.bind(dealQueue).to(dealDirectExchange).with("dealKey");
+    }
+
+
+//=================================================================================================
+
+    //创建要绑定死信的队列
+    @Bean
+    public Queue dealToQueue(){
+        //关联死信交换机
+        Map<String, Object> args = new HashMap<>(2);
+        // x-dead-letter-exchange    这里声明当前队列绑定的死信交换机
+        args.put("x-dead-letter-exchange", "dealDirectExchange");
+        // x-dead-letter-routing-key  这里声明当前队列的死信路由key
+        args.put("x-dead-letter-routing-key","dealKey");
+        // x-message-ttl  声明队列的TTL
+        args.put("x-message-ttl", 6000);//超过6秒后，消息未确认，放到指定的死信队列中！！
+
+        //给当前队列取名
+        return QueueBuilder.durable("dealToQueue").withArguments(args).build();
+    }
+    @Bean//创建要绑定死信的交换机
+    public DirectExchange dealToDirectExchange(){
+        return new DirectExchange("dealToDirectExchange");
+    }
+    @Bean//绑定已绑定死信的队列与交换机
+    public Binding dealToQueueToDealToDirectExchange(Queue dealToQueue,DirectExchange dealToDirectExchange){
+        return BindingBuilder.bind(dealToQueue).to(dealToDirectExchange).with("dealToKey");
+    }
+
+
+
+
+
+//=================================================================================================
 
 
     //4、创建交换机
@@ -65,6 +115,11 @@ public class MQConfig {
 
 
 
+
+
+//=================================================================================================
+
+
     //5、绑定交换机
     @Bean//自动绑定，不用MQ页面手动绑定了,但要注意避免二次绑定冲突！
     public Binding pointQueueToPointDirectExchange(Queue pointQueue, DirectExchange pointDirectExchange){
@@ -85,6 +140,11 @@ public class MQConfig {
     }*/
 
 
+
+
+
+
+//=================================================================================================
 
 
     //websocket 放入到spring容器

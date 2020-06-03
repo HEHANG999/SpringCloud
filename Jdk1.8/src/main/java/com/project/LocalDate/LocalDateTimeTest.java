@@ -1,5 +1,4 @@
-package com.project.date;
-import java.time.LocalDate;
+package com.project.LocalDate;
 import java.time.LocalDateTime;
 
 public class LocalDateTimeTest {
