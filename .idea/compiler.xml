@@ -17,8 +17,12 @@
         <module name="Jdk1.8" />
         <module name="Jwt" />
         <module name="Jwt_client" />
+        <module name="Lock_PublicRecurces" />
+        <module name="LockOne" />
+        <module name="LockTwo" />
         <module name="MyBatis_Plus" />
         <module name="Queue" />
+        <module name="Redis" />
         <module name="RegisterServer" />
         <module name="Shiro" />
         <module name="Swagger" />
@@ -50,9 +54,13 @@
       <module name="Jdk18" options="-parameters" />
       <module name="Jwt" options="-parameters" />
       <module name="Jwt_client" options="-parameters" />
+      <module name="LockOne" options="-parameters" />
+      <module name="LockTwo" options="-parameters" />
+      <module name="Lock_PublicRecurces" options="-parameters" />
       <module name="MyBatis_Plus" options="-parameters" />
       <module name="Queue" options="-parameters" />
       <module name="RabbitMQ" options="-parameters" />
+      <module name="Redis" options="-parameters" />
       <module name="RegisterServer" options="-parameters" />
       <module name="Shiro" options="-parameters" />
       <module name="SpringCloud" options="-parameters" />

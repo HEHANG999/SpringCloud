@@ -7,10 +7,16 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Component;
 
+/**
+ * 自定义Realm类
+ */
 public class CustomRealm extends AuthorizingRealm {
-    //把权限交给shiro
+    /**执行授权逻辑，把权限交给shiro*/
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        //已经登录成功
+
+        System.out.println("执行授权逻辑");
+
+       /* //已经登录成功
         //获取登录用户名
         String name = (String) principalCollection.getPrimaryPrincipal();
         //用用户名 去数据库中查询出该用户的所有权限，交给shiro
@@ -20,12 +26,18 @@ public class CustomRealm extends AuthorizingRealm {
         simpleAuthorizationInfo.addStringPermission("finduser");
         simpleAuthorizationInfo.addStringPermission("finduser2");
         simpleAuthorizationInfo.addStringPermission("finduser3");
-        return simpleAuthorizationInfo;
+        return simpleAuthorizationInfo;*/
+
+       return null;
     }
 
 
-    //把用户交给shiro
+    /**执行认证逻辑，把用户交给shiro*/
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+
+        System.out.println("执行认证逻辑");
+        /*
+
         //在token中获取到登录的用户名和密码
         String userName = authenticationToken.getPrincipal().toString();
         char[] charpass =   ( (UsernamePasswordToken) authenticationToken).getPassword();
@@ -42,7 +54,9 @@ public class CustomRealm extends AuthorizingRealm {
             //这里验证authenticationToken和simpleAuthenticationInfo的信息
             SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user.getUserName(), user.getUserPass(), getName());
             return simpleAuthenticationInfo;
-        }
+        }*/
+
+        return null;
 
     }
 }

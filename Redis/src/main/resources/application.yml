@@ -1,0 +1,14 @@
+#服务器的端口号
+server:
+  port: 8011
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6392
+    password: 123456
+
+#    jedis:
+#      pool:
+#        max-active: 8000  #等待连接池设为8000
+#        max-idle: 10000   #最大10000
+#        min-idle: 1000    #最小1000

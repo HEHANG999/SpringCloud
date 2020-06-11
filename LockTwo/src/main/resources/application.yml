@@ -1,0 +1,8 @@
+#服务器的端口号
+server:
+  port: 8012
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6392
+    password: 123456

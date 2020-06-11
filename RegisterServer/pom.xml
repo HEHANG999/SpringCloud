@@ -17,7 +17,7 @@
 
         <plugins>
 
-            <!--自动部署jar包，方便在cmd命令下启动服务器-->
+            <!--自动部署jar包，方便在cmd命令下启动服务器（java -jar 包名）-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

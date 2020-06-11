@@ -26,6 +26,10 @@
         <module>MyBatis_Plus</module>
         <module>Jdk1.8</module>
         <module>WebService</module>
+        <module>Redis</module>
+        <module>LockOne</module>
+        <module>LockTwo</module>
+        <module>Lock_PublicRecurces</module>
 
     </modules>
 
@@ -82,7 +86,7 @@
 
         <!--spring-boot的web启动的jar包-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
+            <groupId>org.springframework.boot</groupId><!--org为开源下，com为公司-->
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- 打成war包需要的配置-->
@@ -181,7 +185,29 @@
         </dependency>
 
 
+        <!--redis坐标，貌似主坐标要和子坐标合用-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+
     </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <!--自动部署jar包，方便在cmd命令下启动服务器（java -jar 包名）-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
 
 </project>
